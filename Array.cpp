@@ -1,21 +1,4 @@
-#include <iostream>
-using namespace std;
-class IndexOutOfRange:public exception
-{
-    public:
-        const char* what()const throw()
-        {
-            return "RuntimeError: Index out of range Invalid Index";
-        }
-};
-class CapacityNotSpacified
-{
-    public:
-        const char* what()const throw()
-        {
-            return "RuntimeError: Capacity of the Structure not set";
-        }
-};
+#include</home/hp/Softwares/DSA/error.cpp>
 class array
 {
     protected:

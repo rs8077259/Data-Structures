@@ -1,37 +1,5 @@
-#include <iostream>
-using namespace std;
-class IndexOutOfRange:public exception
-{
-    public:
-        const char* what()const throw()
-        {
-            return "RuntimeError: Index out of range Invalid Index";
-        }
-};
-class CapacityNotSpacified
-{
-    public:
-        const char* what()const throw()
-        {
-            return "RuntimeError: Capacity of the Structure not set";
-        }
-};
-class CapacityFULL
-{
-    public:
-        const char* what()const throw()
-        {
-            return "RuntimeError: Capacity is FULL";
-        }
-};
-class ElementNotSpecified
-{
-    public:
-        const char* what()const throw()
-        {
-            return "RuntimeError: Please Insert Elements before Fetching it";
-        }
-};
+#include "error.cpp"
+
 class queue
 {
     protected:
@@ -158,16 +126,4 @@ bool queue::insert(int num)
         return true;
     }
     return false;
-}
-int main()
-{
-    queue a(4);
-    a.insert(6);
-    a.insert(7);
-    a.insert(8);
-    a.insert(200);
-    a.delFront();
-    a.insert(90);
-    cout<<a.countElements()<<endl;;
-    return 0;
 }

@@ -1,5 +1,4 @@
-#include <iostream>
-using namespace std;
+#include</home/hp/Softwares/DSA/error.cpp>
 
 class SLL
 {
@@ -159,15 +158,4 @@ SLL::~SLL()
         start=start->next;
         delete ptr;
     }
-}
-
-int main()
-{
-    SLL a;
-    a.InsertAtStart(70);
-    a.InsertAtLast(19);
-    a.InsertAtLast(50);
-    a.InsertAfter(3,90);
-    cout<<a;
-    return 0;
 }

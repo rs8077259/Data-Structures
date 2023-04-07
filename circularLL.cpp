@@ -1,13 +1,4 @@
-#include<iostream>
-using namespace std;
-class IndexOutOfRange:public exception
-{
-    public:
-        const char* what()const throw()
-        {
-            return "RuntimeError: Index out of range Invalid Index";
-        }
-};
+#include</home/hp/Softwares/DSA/error.cpp>
 class CLL
 {
     public:
