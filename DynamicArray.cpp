@@ -62,15 +62,3 @@ void DynamicArray::halfcapacity()
     delete []ptr;
     ptr=ptr2;
 }
-int main()
-{
-    DynamicArray a(9);
-    a.append(4);
-    a.append(9);
-    a.append(10);
-    a.append(10);
-    a.append(67);
-    a.del(2);
-    cout<<a[-1]<<endl;
-    return 0;
-}

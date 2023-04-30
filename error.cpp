@@ -48,3 +48,11 @@ class DuplicateNode:public exception
             return "RuntimeError: Trying to insert duplicate value :|";
         }
 };
+class NoItem:public exception
+{
+    public:
+        const char* what()const throw()
+        {
+            return "No item specified";
+        }
+};

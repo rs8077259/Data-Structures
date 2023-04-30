@@ -23,9 +23,17 @@ class array
         int get(int);
         bool isFull();
         int getIndex(int);
-        int operator [](unsigned int);
-        int operator [](signed int);
+        int& operator [](int);
         void operator=(array);
+        int greatest();
+        int smallest();
+        int search(int);
+        int sum();
+        float avg();
+        void rotate();
+        void removeDup();
+        void swap(int,int);
+        friend ostream& operator<<(ostream&,array&);
         int count()
         {
             return lastindex+1;
@@ -125,7 +133,7 @@ int array::get(int index)
         return ptr[index];
     throw *(new IndexOutOfRange);
 }
-int array::operator[](int index)
+int& array::operator[](int index)
 {
     if(index>=0)
     {
@@ -142,7 +150,68 @@ int array::operator[](int index)
     }
 
 }
-void array::operator=(array arr)
+int array::greatest()
 {
-    
+    int a=ptr[0];
+    for(int i=1;i<=lastindex;i++)
+        if(ptr[i]>a)
+            a=ptr[i];
+    return a;
+}
+int array::smallest()
+{
+    int a=ptr[0];
+    for(int i=1;i<=lastindex;i++)
+        if(ptr[i]<a)
+            a=ptr[i];
+    return a;
+}
+int array::search(int what)
+{
+    for(int i=0;i<=lastindex;i++)
+        if(ptr[i]==what)
+            return i;
+    return -1;
+}
+int array::sum()
+{
+    int s=0,i=0;
+    for(i;i<=lastindex;s+=ptr[i],i++);
+    return s;
+}
+float array::avg()
+{
+    return (sum()/(float)capacity);
+}
+void array::rotate()
+{
+    int a=ptr[0];
+    for(int i=0;i<=lastindex;ptr[i]=ptr[i+1],i++);
+    ptr[lastindex]=a;
+}
+void array::removeDup()
+{
+    int j=0;
+    for(int i=0;i<=lastindex;i++)
+    {
+        for(j=i+1;j<=lastindex;j++)
+        {
+            if(ptr[i]==ptr[j])
+                del(j);
+        }
+    }
+}
+void array::swap(int e1,int e2)
+{
+    int a=ptr[e1];
+    ptr[e1]=ptr[e2];
+    ptr[e2]=a;
+}
+ostream& operator<<(ostream& cout,array& a)
+{
+    cout<<'[';
+    for(int i=0;i<=a.lastindex;i++)
+        cout<<a.ptr[i]<<',';
+    cout<<"]\n";
+    return cout;
 }
